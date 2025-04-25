@@ -17,6 +17,9 @@ HEADERS_DIR			:=		./inc/
 # NEW_DIR			:=		new/
 
 
+HUMAN_DIR			:=		Human/
+WEAPON_DIR			:=		Weapon/
+
 
 #############################################################################################
 #																							#
@@ -28,7 +31,9 @@ HEADERS_DIR			:=		./inc/
 HEADERS_D			:=		./incs/
 
 
-HEADERS				:=
+HEADERS				:=		HumanA.hpp			\
+							HumanB.hpp			\
+							Weapon.hpp
 
 
 
@@ -39,13 +44,20 @@ SRC					:=		main.cpp
 # SRC_NEW				:=
 
 
+SRC_HUMAN			:=		HumanA.cpp		\
+							HumanB.cpp
+
+
+SRC_WEAPON			:=		Weapon.cpp
 
 
 # Every now src_dir add a addprifix like that :
 #	$(addprefix $(NEW_DIR), $(SRC_NEW))
 
 
-SRCS				=		$(SRC)
+SRCS				=		$(addprefix $(WEAPON_DIR), $(SRC_WEAPON))	\
+							$(addprefix $(HUMAN_DIR), $(SRC_HUMAN))		\
+							$(SRC)
 
 
 #	#################################################################################	#
