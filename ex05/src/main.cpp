@@ -1,38 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/25 13:09:47 by fcretin           #+#    #+#             */
-/*   Updated: 2025/04/25 16:37:34 by fcretin          ###   ########.fr       */
+/*   Created: 2025/04/26 09:32:37 by fcretin           #+#    #+#             */
+/*   Updated: 2025/04/26 10:08:09 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef		HUMANA_HPP
-# define	HUMANA_HPP
+#include "Harl.hpp"
 
-#include "Weapon.hpp"
-
-class HumanA
+int main()
 {
-	private:
-	// {
+	Harl	TheH;
 
-		std::string	_name;
-		Weapon		&_weapon;
-
-	// }
-	public:
-	// {
-
-		HumanA( std::string name, Weapon &type );
-		~HumanA( void );
-		void	attack();
-
-	// }
-};
-
-
-# endif
+	TheH.complain("error");
+	TheH.complain("info");
+	TheH.complain("warning");
+	TheH.complain("idk");
+	TheH.complain("debug");
+}

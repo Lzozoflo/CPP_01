@@ -1,51 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/25 13:09:47 by fcretin           #+#    #+#             */
-/*   Updated: 2025/04/25 17:03:06 by fcretin          ###   ########.fr       */
+/*   Created: 2025/04/26 09:32:37 by fcretin           #+#    #+#             */
+/*   Updated: 2025/04/26 10:38:34 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef		HUMANB_HPP
-# define	HUMANB_HPP
+#include "Harl.hpp"
 
-#include <iostream>
-#include "Weapon.hpp"
-
-class HumanB
+int main(int ac, char **av)
 {
-	private:
-	// {
-
-		std::string _name;
-		Weapon 		*_weapon;
-		bool		_Hand;
-
-	// }
-	public:
-	// {
-
-		HumanB( std::string name );
-		~HumanB( void );
-		void	attack();
-		void	setWeapon(Weapon &club);
-		void	cutHand( void );
-
-	// }
-};
-
-
-
-
-
-
-
-
-
-
-
-# endif
+	Harl	TheH;
+	switch (ac)
+	{
+		case 2:
+			break;
+		default:
+			std::cerr << RED << "Wrong number of Argument" << RESET << std::endl;
+			return 1;
+	}
+	TheH.complain(av[1]);
+	return 0;
+}

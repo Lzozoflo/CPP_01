@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 13:09:46 by fcretin           #+#    #+#             */
-/*   Updated: 2025/04/25 17:14:44 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/04/26 08:51:36 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,6 @@ void	HumanB::setWeapon(Weapon &club)
 
 void	HumanB::cutHand( void )
 {
-	std::cout << RED << _name << " grip on a chainsaw" << RESET << std::endl;
+	std::cout << RED << _name << " grip on a chainsaw lost Hands" << RESET << std::endl;
 	_Hand = false;
 }
