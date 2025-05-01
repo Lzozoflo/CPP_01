@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 13:09:47 by fcretin           #+#    #+#             */
-/*   Updated: 2025/04/25 17:03:06 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/05/01 12:12:34 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ class HumanB
 	private:
 	// {
 
-		std::string _name;
-		Weapon 		*_weapon;
+		std::string _Name;
+		Weapon 		*_Weapon;
 		bool		_Hand;
 
 	// }
@@ -33,6 +33,7 @@ class HumanB
 		~HumanB( void );
 		void	attack();
 		void	setWeapon(Weapon &club);
+
 		void	cutHand( void );
 
 	// }

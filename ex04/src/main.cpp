@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 11:06:45 by fcretin           #+#    #+#             */
-/*   Updated: 2025/04/25 18:07:26 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/05/01 12:16:17 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 #define GREEN  "\033[32m"
 #define BLUE  "\033[34m"
 #define YELLOW "\033[33m"
-
 
 
 std::string replaceString(std::string original, const std::string& toReplace, const std::string& replacement)

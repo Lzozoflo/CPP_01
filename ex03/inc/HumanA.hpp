@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 13:09:47 by fcretin           #+#    #+#             */
-/*   Updated: 2025/04/25 16:37:34 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/05/01 12:09:01 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ class HumanA
 	private:
 	// {
 
-		std::string	_name;
-		Weapon		&_weapon;
+		std::string	_Name;
+		Weapon		&_Weapon;
 
 	// }
 	public:

@@ -1,15 +1,5 @@
 .PHONY: all clean fclean re f fclear c clear
 
-NAME				=		cpp
-CC					=		c++
-CFLAGS				=		-Wall -Wextra -Werror -std=c++98
-CFLAGSS				=		-Weverything						 -Wno-padded -Wno-documentation-unknown-command -Wno-documentation -std=c++98
-NPD					=		--no-print-directory
-MAKE				:=		$(MAKE) -j $(NPD)
-RM					=		rm -fr
-AR					=		ar -rcs
-INC_FLAGS			=		-I $(D_INC)
-
 #############################################################################################
 #																							#
 #										// Directories										#
@@ -18,11 +8,15 @@ INC_FLAGS			=		-I $(D_INC)
 
 
 # Directories
-D_SRC				=		src/
-D_OBJ				=		1object/
-D_INC				=		inc/
+SRC_DIR				:=		./src/
+HEADERS_DIR			:=		./inc/
 
-# Source Directories
+# Sub Directories
+
+# for a new DIR add a new :
+# NEW_DIR			:=		new/
+
+
 
 #############################################################################################
 #																							#
@@ -31,14 +25,52 @@ D_INC				=		inc/
 #############################################################################################
 
 
-INC					=		Zombie.hpp
+HEADERS_D			:=		./incs/
 
 
-SRC					=		Zombie.cpp			\
+HEADERS				:=		Zombie.hpp
+
+
+
+SRC					:=		Zombie.cpp			\
 							newZombie.cpp		\
 							randomChump.cpp		\
 							main.cpp
 
+
+# for a new SRC add a new :
+# SRC_NEW				:=
+
+
+
+
+# Every now src_dir add a addprifix like that :
+#	$(addprefix $(NEW_DIR), $(SRC_NEW))
+
+
+SRCS				=		$(SRC)
+
+
+#	#################################################################################	#
+#	#		#			No need To change anything below this line.			#		#	#
+#	#################################################################################	#
+
+
+#############################################################################################
+#																							#
+#										// Variable											#
+#																							#
+#############################################################################################
+
+
+NAME				=		cpp
+CC					=		c++
+INCLUDES			=		-I$(HEADERS_DIR)
+CPPFLAGS			=		-Wall -Werror -Wextra -std=c++98 $(INCLUDES)
+CPPFLAGSS			=		-Weverything						 -Wno-padded -Wno-documentation-unknown-command -Wno-documentation -std=c++98 $(INCLUDES)
+NPD					=		--no-print-directory
+MAKE				:=		$(MAKE) -j $(NPD)
+RM					=		rm -fr
 
 
 #############################################################################################
@@ -48,48 +80,56 @@ SRC					=		Zombie.cpp			\
 #############################################################################################
 
 
-# All src in his Src Directories
-SRCS				=		$(addprefix $(D_SRC), $(SRC))
+OBJS_DIR			:=		.objs/
+OBJS_FILES			:=		$(SRCS:.cpp=.o)
+OBJS				:=		$(addprefix $(OBJS_DIR), $(OBJS_FILES))
 
 
-# Changing all source directories to object directories
-OBJS				=		$(subst $(D_SRC), $(D_OBJ), $(SRCS:.cpp=.o))
-DEPS				=		$(SRCS:%.cpp=%.d)
-
-INCS				=		$(addprefix $(D_INC), $(INC))
-
-#############################################################################################
-#																							#
-#										// COMPILATION										#
-#																							#
-#############################################################################################
-
-
-all					:
-			$(MAKE) $(NAME)
-
-$(NAME)				:	$(OBJS)
-			$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
-
-$(D_OBJ)%.o			:	$(D_SRC)%.cpp $(INCS) Makefile
-			@mkdir -p $(dir $@)
-			$(CC) $(CFLAGS) -c $< -o $@ $(INC_FLAGS)
+DEPS_DIR			:=		deps/
+DEPS_FILES			:=		$(OBJS_FILES:.o=.d)
+DEPS				:=		$(addprefix $(DEPS_DIR), $(DEPS_FILES))
 
 
 #############################################################################################
 #																							#
-#									// CLEAN  FCLEAN  RE									#
+#									// Rules Compilation									#
+#																							#
+#############################################################################################
+
+
+all					:		$(NAME)
+
+
+$(NAME)				:		$(OBJS)
+		$(CC) $^ $(CPPFLAGS) -o $(NAME)
+
+
+
+$(DEPS_DIR) 		:
+		mkdir -p $(DEPS_DIR)
+
+
+$(OBJS_DIR)%.o : $(SRC_DIR)%.cpp Makefile | $(DEPS_DIR)
+	@mkdir -p $(dir $@)
+	@mkdir -p $(dir $(DEPS_DIR)$*)
+	$(CC) $(CPPFLAGS) $(INCLUDES) -MP -MMD -MF $(DEPS_DIR)$*.d -c $< -o $@
+
+#############################################################################################
+#																							#
+#									// clean fclean re										#
 #																							#
 #############################################################################################
 
 
 clean 				:
-			$(RM) $(D_OBJ)
+			$(RM) $(OBJS_DIR)
+			$(RM) $(DEPS_DIR)
 
 
 fclean 				:
 			$(RM) $(NAME)
-			$(RM) $(D_OBJ)
+			$(RM) $(OBJS_DIR)
+			$(RM) $(DEPS_DIR)
 
 
 re 					:	 fclean all
@@ -97,13 +137,15 @@ re 					:	 fclean all
 
 #############################################################################################
 #																							#
-#										Allias												#
+#										// Allias											#
 #																							#
 #############################################################################################
 
 
-c				:	clear
-clear			:	clean
+c					:	clear
+clear				:	clean
 
-f				:	fclean
-fclear			:	fclean
+f					:	fclean
+fclear				:	fclean
+
+-include $(DEPS)

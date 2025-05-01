@@ -6,21 +6,27 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 16:07:43 by fcretin           #+#    #+#             */
-/*   Updated: 2025/04/25 16:43:29 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/05/01 11:49:02 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
+
+
+/*---------------constructor-------------destructor----------------*/
+
 
 Zombie::Zombie( std::string name ) : _name(name)
 {
 	std::cout << BLUE << "Construction of a Zombie named: " << _name << RESET << std::endl;
 }
 
+
 Zombie::Zombie( void ) : _name("Default")
 {
 	std::cout << BLUE << "Construction of a Zombie named: " << _name << RESET << std::endl;
 }
+
 
 Zombie::~Zombie( void )
 {
@@ -28,10 +34,10 @@ Zombie::~Zombie( void )
 }
 
 
-
-
 /*---------------constructor-------------destructor----------------*/
 
+
+/*----func----*/
 
 
 void Zombie::SetName( std::string name )
@@ -39,6 +45,7 @@ void Zombie::SetName( std::string name )
 	_name = name;
 	std::cout << BLUE << "SetName of a Zombie by: " << name << RESET << std::endl;
 }
+
 
 void	Zombie::announce( void )
 {
@@ -52,3 +59,6 @@ void	Zombie::announce( void )
 
 	}
 }
+
+
+/*----func----*/

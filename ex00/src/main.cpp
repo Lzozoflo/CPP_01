@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 11:06:45 by fcretin           #+#    #+#             */
-/*   Updated: 2025/04/25 11:25:14 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/05/01 11:47:24 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,7 @@ int main (void)
 	Zombieptr->announce();
 	delete Zombieptr;
 
+
 	randomChump("Foo");
-
-
 	return (0);
 }
