@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 11:06:45 by fcretin           #+#    #+#             */
-/*   Updated: 2025/04/25 11:38:42 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/05/27 08:59:22 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 Zombie* zombieHorde( int N, std::string name );
 
-int main (void)
+int main(void)
 {
 	int N = 3;
 

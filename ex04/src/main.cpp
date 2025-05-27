@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 11:06:45 by fcretin           #+#    #+#             */
-/*   Updated: 2025/05/01 12:16:17 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/05/14 09:56:47 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,3 +68,19 @@ int main(int ac, char **av)
 	ifs.close();
 	return (0);
 }
+
+
+// int main() {
+//     std::string code = "std::cout << str << std::endl;";
+//     std::string from = "s";
+//     std::string to = "standaru sama";
+
+//     size_t pos = 0;
+//     while ((pos = code.find(from, pos)) != std::string::npos) {
+//         code.replace(pos, from.length(), to);
+//         pos += to.length();  // avance après le remplacement
+//     }
+
+//     std::cout << code << std::endl;
+//     return 0;
+// }

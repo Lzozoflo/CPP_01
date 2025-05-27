@@ -6,11 +6,11 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 13:09:47 by fcretin           #+#    #+#             */
-/*   Updated: 2025/05/01 12:12:34 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/05/14 09:43:36 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef		HUMANB_HPP
+# ifndef	HUMANB_HPP
 # define	HUMANB_HPP
 
 #include <iostream>

@@ -6,12 +6,12 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 13:09:48 by fcretin           #+#    #+#             */
-/*   Updated: 2025/05/01 12:04:31 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/05/14 09:43:45 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	WEAPON_HPP
-#define	WEAPON_HPP
+# ifndef	WEAPON_HPP
+# define	WEAPON_HPP
 
 #include <iostream>
 
@@ -36,8 +36,8 @@ class Weapon
 		Weapon( std::string type );
 		~Weapon( void );
 
-		void	setType( std::string newtype);
-		const std::string		&getType( void ) const;
+		void				setType( std::string newtype);
+		const std::string	&getType( void ) const;
 
 	// }
 };
